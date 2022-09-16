@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.imagens {
+  --s:150px;
+  --g:10px;
+  --f:1.5;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: var(--g);
+  width: calc(3 * var(--s) + 2 * var(--g));
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+.imagens img {
+  height: 200px;
+  width: auto;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  border: 1px solid;
+  transition: 0.35s linear;
+}
+.imagens :hover {
+  border-color: rgba(212, 204, 204, 0.7803921569);
+  filter: grayscale(0);
+  width: calc(var(--s) * var(--f));
+  height: calc(var(--s) * var(--f));
+}
+
+header {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(197, 5, 5, 0.9647058824);
+}
+
+.mountains {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 120%;
+}
+.mountains path:nth-child(1) {
+  animation: wave1 35s ease-in-out infinite alternate;
+}
+.mountains path:nth-child(2) {
+  animation: wave1 40s ease-in-out infinite alternate;
+}
+.mountains path:nth-child(3) {
+  animation: wave1 45s ease-in-out infinite alternate;
+}
+
+@keyframes wave1 {
+  from {
+    transform: translate(-850px);
+  }
+}
+@keyframes wave2 {
+  from {
+    transform: translate(1000px);
+  }
+}
+@keyframes wave3 {
+  from {
+    transform: translate(-700px);
+  }
+}
+#player {
+  position: relative;
+  display: flex;
+  width: max-content;
+  height: max-content;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+}
+#player .fa {
+  font-size: 20px;
+}
+#player video {
+  width: 600px;
+  height: auto;
+}
+#player .controls {
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+#player :hover {
+  opacity: 1;
+}
+#player button {
+  background: transparent;
+  color: #fff;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px #000;
+  border: none;
+  cursor: pointer;
+}
+#player .timeline {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: none;
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+#player .timeline .bar {
+  background-color: #e00;
+  height: 5px;
+  flex: 1;
+}
+#player .timeline .bar .inner {
+  background-color: #ccc;
+  width: 0;
+  height: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

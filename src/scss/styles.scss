@@ -2,9 +2,13 @@ $color-font: #fff;
 $color-bg-default: #33f;
 $font-default: Arial, Helvetica, sans-serif;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: url('../assets/background.jpg') no-repeat top center;
-    background-size: cover;
     font-family: $font-default;
     margin: 0;
 }
@@ -15,14 +19,82 @@ h1 {
     width: 100%;
 }
 
-.container {
-    display: block;
-    max-width: 1200px;
+.imagens {
+    --s:150px;
+    --g:10px;
+    --f:1.5;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: var(--g);
+    width: calc(3 * var(--s) + 2 * var(--g));
+    aspect-ratio: 1;
     margin: 0 auto;
     
     img {
-        width: 100%;
-        height: auto;
+        height: 200px;
+        width: auto;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        filter: grayscale(80%);
+        border: 1px solid;
+        transition: 0.35s linear;
+    }
+
+    :hover {
+        border-color: #d4ccccc7;
+        filter: grayscale(0);
+        width: calc(var(--s) * var(--f));
+        height: calc(var(--s) * var(--f));
     }
 
 }
+
+
+header {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #c50505f6;
+}
+
+.mountains {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 120%;
+
+    path:nth-child(1) {
+        animation: wave1 35s ease-in-out infinite alternate;
+    }
+
+    path:nth-child(2) {
+        animation: wave1 40s ease-in-out infinite alternate;
+    }
+
+    path:nth-child(3) {
+        animation: wave1 45s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes wave1 {
+    from {
+        transform: translate(-850px);
+    }
+}
+
+@keyframes wave2 {
+    from {
+        transform: translate(1000px);
+    }
+}
+
+@keyframes wave3 {
+    from {
+        transform: translate(-700px);
+    }
+}
+
+@import 'player'
