@@ -8,17 +8,13 @@
     "build": "webpack --config webpack.config.js --mode production ",
     "dev": "webpack serve --stats-children --live-reload --open --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cavalcantemmarcelo/webpack.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cavalcantemmarcelo/webpack/issues"
+    "url": "https://github.com/gustavoagoncalves/Curso-Full-Stack-Python"
   },
-  "homepage": "https://github.com/cavalcantemmarcelo/webpack#readme",
+  "homepage": "https://github.com/gustavoagoncalves/Curso-Full-Stack-Python/blob/main/webpack/README.md",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
